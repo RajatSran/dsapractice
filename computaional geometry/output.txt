@@ -1,0 +1,2 @@
+enter the number of points of a polygonenter the cordinatesArea of polygon
+16

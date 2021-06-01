@@ -1,0 +1,2 @@
+sum of first five elements -> 15
+sum of elements from 2 index to 6 index -> 9
