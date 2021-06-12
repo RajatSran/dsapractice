@@ -1,4 +1,4 @@
-
+// C++ program to print longest palindromic subsequence
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -33,8 +33,6 @@ int LCS(string x, string y, int m, int n) {
 
 }
 
-
-
 // Driver code
 int main()
 {
@@ -44,16 +42,13 @@ int main()
 #endif
     string x;
     string y;
-    cin >> x >> y;
+    cin >> x;
+    y = x;
+    reverse(y.begin(), y.end());
 
     int m = x.size(), n = y.size();
-    cout <<  (m + n) - LCS(x, y, m, n);
-    /* logic --> worst possible - lcs
-    abcdgh
-    abadah
-    (ab)ca(d)ga(h)
-    --> abcadagh = 8
-    */
+    cout <<  LCS(x, y, m, n);
+
     return 0;
 }
 

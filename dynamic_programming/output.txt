@@ -1,2 +1,1 @@
-insertion : 2
-deletion : 2
+5
