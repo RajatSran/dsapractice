@@ -38,7 +38,6 @@ string longestcommonsubstring(string x, string y, int m, int n) {
         if (x[i - 1] == y[i - 1]) {
             i--;
             j--;
-            //result += x[i];
             result.push_back(x[i]);
         } else {
             if (t[i - 1][j] >= t[i][j - 1]) {
