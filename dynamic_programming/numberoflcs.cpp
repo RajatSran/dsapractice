@@ -1,10 +1,10 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int lengthOfLIS(vector<int>& nums) {
+bool lengthOfLIS(vector<int>& nums) {
 	int n = nums.size();
 	int t[n];
-	if (n <= 1) return 1;
+	if (n <= 1) return 0;
 	for (int i = 0; i < n; i++) {
 		t[i] = 1;
 	}
@@ -18,11 +18,12 @@ int lengthOfLIS(vector<int>& nums) {
 			result = max(t[i], result);
 		}
 	}
-	for (int i = 0; i < n; ++i)
-	{
-		cout << t[i] << endl;
+	// return result;
+	if (result >= 3) {
+		return true;
+	} else {
+		return false;
 	}
-	return result;
 }
 
 int main()
@@ -31,7 +32,7 @@ int main()
 	freopen("input.txt", "r", stdin);
 	freopen("output.txt", "w", stdout);
 #endif
-	vector<int> x = {2, 2};
+	vector<int> x = {1, 2, 1, 3};
 
 	cout << lengthOfLIS(x);
 	return 0;
