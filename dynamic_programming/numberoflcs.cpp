@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-bool lengthOfLIS(vector<int>& nums) {
+int lengthOfLIS(vector<int>& nums) {
 	int n = nums.size();
 	int t[n];
 	if (n <= 1) return 0;

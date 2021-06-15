@@ -1,5 +1,5 @@
 // C++ program to print shortest common supersequence
-// C++ program to print longest common subsequence
+
 #include <bits/stdc++.h>
 using namespace std;
 
