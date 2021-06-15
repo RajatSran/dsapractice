@@ -1,40 +1,59 @@
 #include <bits/stdc++.h>
 using namespace std;
-// number of rotations is equal to position of min element so first find min element
 
-int findMin(vector<int>& nums) {
+int binarysearch(vector<int> nums, int i, int j, int target) {
+	int mid;
+	while (i <= j) {
+		mid = i + (j - i) / 2;
+		if (nums[mid] == target) {
+			return mid;
+		} else if (nums[mid] > target) {
+			j = mid - 1;
+		} else {
+			i = mid + 1;
+		}
+	}
+	return -1;
+}
+
+int search(vector<int>& nums, int target) {
+
+	int pivot = -1;
 	int n = nums.size();
-	//if already sorted 0 rotaions
 	if (nums[0] <= nums[n - 1]) {
-		return nums[0];
+		pivot = 0;
 	}
 	int i = 0;
 	int j = n - 1;
 	int mid;
-	int pivot = -1;
 	while (i <= j) {
-		//sorted subpart
 		if (nums[i] <= nums[j]) {
 			pivot = i;
 			break;
 		}
 		mid = i + (j - i) / 2;
-		// min if element at both sides are small
 		if (nums[mid] < nums[(mid - 1 + n) % n] && nums[mid] < nums[(mid + 1) % n]) {
 			pivot = mid;
 			break;
 		}
-		// go towards unsorted part
-		// mid element > intital element then go to right side as left is sorted
 		else if (nums[mid] > nums[j]) {
 			i = mid + 1;
 		}
-		// mid element < end element then go to left side as right is sorted
 		else if (nums[mid] < nums[i]) {
 			j = mid - 1;
 		}
 	}
-	return nums[pivot];
+
+	int a = binarysearch(nums, 0, pivot - 1, target);
+	int b = binarysearch(nums, pivot, n - 1, target);
+	if (a != -1) {
+		return a;
+	} else if (b != -1) {
+		return b;
+	} else {
+		return -1;
+	}
+
 }
 
 int main()
@@ -46,7 +65,7 @@ int main()
 	vector<int> x = { 8, 10, 12, -1, 2, 3 };
 
 
-	cout << findMin(x);
+	cout << search(x, 2);
 	return 0;
 }
 
