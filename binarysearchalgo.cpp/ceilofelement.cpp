@@ -28,6 +28,7 @@ int main()
     freopen("input.txt", "r", stdin);
     freopen("output.txt", "w", stdout);
 #endif
+
     vector<int> x = {  -1, 2, 10, 12 , 38};
 
 
