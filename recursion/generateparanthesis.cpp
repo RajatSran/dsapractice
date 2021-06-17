@@ -4,6 +4,7 @@ using namespace std;
 vector<string> valid;
 
 void generate(string &s, int open, int close) { // left for open and left for closing
+    //base condition
     if (open == 0 && close == 0) {
         cout << s << endl;
         valid.push_back(s);
