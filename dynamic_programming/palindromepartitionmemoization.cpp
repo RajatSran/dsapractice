@@ -1,6 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 
+int dp[1002][1002];
 bool palindrome(string s, int i, int j) {
 	while (i <= j) {
 		if (s[i] != s[j]) {
@@ -20,6 +21,9 @@ int palindromepartition(string s, int i, int j) {
 	if (palindrome(s, i, j)) {
 		return 0;
 	}
+	if (dp[i][j] != -1) {
+		return dp[i][j];
+	}
 	int mini = INT_MAX;
 	int temp;
 
@@ -31,7 +35,7 @@ int palindromepartition(string s, int i, int j) {
 			mini = temp;
 		}
 	}
-	return mini;
+	return dp[i][j] = mini;
 }
 
 int main() {
@@ -40,6 +44,7 @@ int main() {
 	freopen("output.txt", "w", stdout);
 #endif
 	string s = "nitin";
+	memset(dp, -1, sizeof dp);
 	cout << palindromepartition(s, 0, s.size() - 1);
 
 }
