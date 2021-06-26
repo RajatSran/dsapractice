@@ -2,16 +2,19 @@
 using namespace std;
 
 // vector<vector<int>> arr(100001);//nodes
-vector<int> arr[100001];
-int vis[100001];
+vector<int> arr[1001];
+int vis[1001];
+int dist[1001];
 
-void dfs(int node) {
+//single source shortest path
+void dfs(int node, int d) {
 	vis[node] = 1;
+	dist[node] = d;
 	for (int child : arr[node])
 	{
 		if (!vis[child])
 		{
-			dfs(child);
+			dfs(child, dist[node] + 1);
 		}
 	}
 }
@@ -35,15 +38,26 @@ int main() {
 		arr[b].push_back(a);
 	}
 
-	int cc = 0; //connected component count
-	for (int i = 1; i <= n; ++i)
-	{
-		if (!vis[i]) {
-			dfs(i) ;
-			cc++;
+	dfs(1, 0);
+
+	int q;
+	cin >> q; //number of girls
+	int ans = -1, min_dist = INT_MAX;
+	while (q--) {
+		int girl_city;
+		cin >> girl_city;
+		if (dist[girl_city] < min_dist)
+		{
+			min_dist = dist[girl_city];
+			ans = girl_city;
+		}
+		if (dist[girl_city] == min_dist && girl_city < ans) {
+			ans = girl_city;
 		}
 	}
-	cout << cc;
+	cout << ans;
+
+
 
 }
 
