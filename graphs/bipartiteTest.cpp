@@ -1,11 +1,6 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-/*properties to be a tree :
-1. only one connected component --> calculate cc and check if it is one
-2. if no cycle present --> number of edges = total nodes - 1
-
-*/
 
 //vector<vector<int>> arr(100001);//nodes
 vector<int> arr[1001];
@@ -17,11 +12,11 @@ bool dfs(int node, int c) {
 	col[node] = c;
 	for (int child : arr[node]) {
 		if (!vis[child]) {
-			if (dfs(child, c ^ 1) == false) {
+			if (dfs(child, c ^ 1) == false) {//if
 				return false;
 			}
 		} else {
-			if (col[child] == col[node])
+			if (col[child] == col[node])//if child and parent both have same color
 				return false;
 		}
 	}

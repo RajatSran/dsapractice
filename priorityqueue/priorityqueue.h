@@ -64,6 +64,7 @@ public:
 			else {
 				min = leftchild;
 			}
+            
 			if (pq[i] > min)
 			{
 				int temp = pq[min];
