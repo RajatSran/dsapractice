@@ -78,9 +78,4 @@ int main() {
 			cout << dist[b] << endl;
 		}
 	}
-
-
-
-
-
 }
