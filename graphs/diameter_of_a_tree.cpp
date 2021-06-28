@@ -6,14 +6,17 @@ using namespace std;
 vector<int> arr[100001];
 int vis[100001];
 int cc_size;
+int distance;
 
-void dfs(int node) {
+int maxD, maxNode;
+void dfs(int node, int d) {
 	vis[node] = 1;
-	cc_size++;
+	if (d > maxD) maxD = d, maxNode = node;
+
 	for (int child : arr[node])
 	{
 		if (!vis[child]) {
-			dfs(child);
+			dfs(child, d + 1);
 		}
 	}
 }
@@ -35,7 +38,14 @@ int main() {
 		arr[a].push_back(b);
 		arr[b].push_back(a);
 	}
-
+	dfs(1, 0);
+	for (int i = 1; i <= n ; ++i)
+	{
+		vis[i] = 0;
+	}
+	maxD = -1;
+	dfs(maxNode, 0);
+	cout << maxD;
 
 
 
