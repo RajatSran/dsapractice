@@ -1,19 +1,19 @@
 template <typename T>
-class binarytreenode
+class Node
 {
 public:
 	T data;
-	binarytreenode* left;
-	binarytreenode* right;
+	Node* left;
+	Node* right;
 
-	binarytreenode(T data) {
+	Node(T data) {
 		this->data = data;
 		left = NULL;
 		right = NULL;
 		//as it might store a garbage value
 	}
 
-	~binarytreenode() {
+	~Node() {
 		delete left;
 		delete right;
 	}

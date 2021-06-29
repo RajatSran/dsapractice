@@ -11,24 +11,24 @@ inorder -- left root right
 #include "binarytreenode.h"
 using namespace std;
 
-binarytreenode<int>* takeinputlevelwise() {
+Node<int>* takeinputlevelwise() {
 	int rootdata;
 	cin >> rootdata;
 	if (rootdata == -1)
 	{
 		return NULL;
 	}
-	binarytreenode<int>* root = new binarytreenode<int>(rootdata);
-	queue<binarytreenode<int>*> pendingnodes;
+	Node<int>* root = new Node<int>(rootdata);
+	queue<Node<int>*> pendingnodes;
 	pendingnodes.push(root);
 	while (pendingnodes.size() != 0) {
-		binarytreenode<int>* front = pendingnodes.front();
+		Node<int>* front = pendingnodes.front();
 		pendingnodes.pop();
 		int leftchilddata;
 		cin >> leftchilddata;
 		if (leftchilddata != -1)
 		{
-			binarytreenode<int>* child = new binarytreenode<int>(leftchilddata);
+			Node<int>* child = new Node<int>(leftchilddata);
 			front->left = child;
 			pendingnodes.push(child);
 		}
@@ -36,7 +36,7 @@ binarytreenode<int>* takeinputlevelwise() {
 		cin >> rightchilddata;
 		if (rightchilddata != -1)
 		{
-			binarytreenode<int>* child = new binarytreenode<int>(rightchilddata);
+			Node<int>* child = new Node<int>(rightchilddata);
 			front->right = child;
 			pendingnodes.push(child);
 		}
@@ -44,13 +44,13 @@ binarytreenode<int>* takeinputlevelwise() {
 	return root;
 }
 
-void printLevelOrder(binarytreenode<int> *root)
+void printLevelOrder(Node<int> *root)
 {
 	// Base Case
 	if (root == NULL) return;
 
 	// Create an empty queue for level order traversal
-	queue<binarytreenode<int>*> q;
+	queue<Node<int>*> q;
 
 	// Enqueue Root and initialize height
 	q.push(root);
@@ -58,11 +58,10 @@ void printLevelOrder(binarytreenode<int> *root)
 	while (q.empty() == false)
 	{
 		// Print front of queue and remove it from queue
-		binarytreenode<int> *node = q.front();
+		Node<int> *node = q.front();
 		cout << node->data << " ";
 
 		q.pop();
-
 
 		/* Enqueue left child */
 		if (node->left != NULL)
@@ -74,7 +73,7 @@ void printLevelOrder(binarytreenode<int> *root)
 	}
 }
 
-void inorder(binarytreenode<int>* root) {
+void inorder(Node<int>* root) {
 	if (root == NULL)
 	{
 		return;
@@ -84,7 +83,7 @@ void inorder(binarytreenode<int>* root) {
 	inorder(root->right);
 }
 
-void preorder(binarytreenode<int>* root) {
+void preorder(Node<int>* root) {
 	if (root == NULL)
 	{
 		return;
@@ -94,7 +93,7 @@ void preorder(binarytreenode<int>* root) {
 	preorder(root->right);
 }
 
-void postorder(binarytreenode<int>* root) {
+void postorder(Node<int>* root) {
 	if (root == NULL)
 	{
 		return;
@@ -110,7 +109,7 @@ int main() {
 	freopen("output.txt", "w", stdout);
 #endif
 
-	binarytreenode<int>* root = takeinputlevelwise();
+	Node<int>* root = takeinputlevelwise();
 	printLevelOrder(root);
 	cout << endl;
 	inorder(root);
