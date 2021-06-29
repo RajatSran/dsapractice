@@ -1,2 +1,4 @@
-3
-2
+3-7 is a bridge
+4-5 is a bridge
+4-6 is a bridge
+1-2 is a bridge
