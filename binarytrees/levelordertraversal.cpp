@@ -21,7 +21,7 @@ vector<vector<int>> levelOrder(Node* root) {
 	Node *temp;
 	int len;
 	while (!q.empty()) {
-		len = q.size();
+		len = q.size();// ?
 		vector<int> v;
 		for (int i = 0; i < len; i++) {
 			temp = q.front();
