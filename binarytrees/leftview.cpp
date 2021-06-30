@@ -23,7 +23,7 @@ void rightview(Node* root, vector<int>& ans) {
 		{
 			Node* curr = q.front();
 			q.pop();
-			if (i == n - 1) {
+			if (i == 0) {
 				ans.push_back(curr->val);
 			}
 			if (curr->left != NULL)
@@ -43,9 +43,9 @@ int main() {
 	root->left = new Node(2);
 	root->right = new Node(3);
 	root->left->left = new Node(4);
-	root->left->right = new Node(5);
-	root->right->left = new Node(6);
-	root->right->right = new Node(7);
+	root->right->left = new Node(5);
+	root->right->right = new Node(6);
+	root->right->left->left = new Node(7);
 	vector<int> ans;
 	rightview(root, ans);
 	for (auto x : ans) {
