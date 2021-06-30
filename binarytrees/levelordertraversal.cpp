@@ -27,7 +27,6 @@ vector<vector<int>> levelOrder(Node* root) {
 			temp = q.front();
 			q.pop();
 			v.push_back(temp->val);
-
 			if (temp->left) q.push(temp->left);
 			if (temp->right) q.push(temp->right);
 		}

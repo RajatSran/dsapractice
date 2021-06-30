@@ -11,8 +11,7 @@ void dfs(int node, int par) {
 	in[node] = low[node] = timer;
 	timer++;
 	for (int child : arr[node]) {
-		if (child == par) continue;
-
+		if (child == par)	continue;
 		if (vis[child] == 1) {
 			//child is a back edge
 			low[node] = min(low[node], in[child]);

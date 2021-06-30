@@ -12,7 +12,7 @@ struct Node {
 	}
 };
 
-void rightview(Node* root, vector<int>& ans) {
+void leftview(Node* root, vector<int>& ans) {
 	if (root == NULL)
 		return;
 	queue<Node*> q;
@@ -47,7 +47,7 @@ int main() {
 	root->right->right = new Node(6);
 	root->right->left->left = new Node(7);
 	vector<int> ans;
-	rightview(root, ans);
+	leftview(root, ans);
 	for (auto x : ans) {
 		cout << x << endl;
 	}
