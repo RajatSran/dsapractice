@@ -29,13 +29,6 @@ void printdiagonal(Node* root) {
 			cout << x << " ";
 		cout << endl;
 	}
-	// for (auto it : m)
-	// {
-	// 	vector<int> v = it.second;
-	// 	for (auto it : v)
-	// 		cout << it << " ";
-	// 	cout << endl;
-	// }
 }
 
 int main() {
