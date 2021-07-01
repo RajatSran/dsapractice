@@ -19,11 +19,17 @@ int maxpathsum(Node* root, int& result) {
 	int r = maxpathsum(root->right, result);
 
 	//induction
-	int temp = max(root->val, max(l, r) + root->val); //here when we are not considering root
+	/*4 values are compared
+	1. root->val
+	2. root->val +leftside
+	3. root->val +rightside
+	4. root->val +leftside +rightsize
+	*/
+
+	int temp = max(root->val, max(l, r) + root->val);
 	int ans = max(temp, l + r + root->val);
-	//int ans = l+r+1 could be written directly
 	result = max(result, ans);
-	return temp;
+	return temp;// think why returning temp not ans
 }
 
 
