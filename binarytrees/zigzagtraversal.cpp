@@ -12,38 +12,58 @@ struct Node {
 	}
 };
 
-vector<vector<int>> levelOrder(Node* root) {
-	if (root == NULL)
-		return {};
-	vector<vector<int>> ans;
+// vector<vector<int>> levelOrder(Node* root) {
+// 	if (root == NULL)
+// 		return {};
+// 	vector<vector<int>> ans;
+// 	queue<Node*> q;
+// 	q.push(root);
+// 	Node *temp;
+// 	int len;
+// 	bool flag = false;
+// 	while (!q.empty()) {
+// 		len = q.size();
+// 		vector<int> v;
+// 		for (int i = 0; i < len; i++) {
+// 			temp = q.front();
+// 			q.pop();
+// 			if(temp)
+// 				v.push_back(temp->val);
+// 			if (flag) {
+// 				if (temp->left) sq.push(temp->left);
+// 				if (temp->right) sq.push(temp->right);
+// 			} else {
+// 				if (temp->right) sq.push(temp->right);
+// 				if (temp->left) sq.push(temp->left);
+// 			}
+
+// 		}
+// 		if(sq.empty()){
+// 			flag = !flag;
+// 			swap(q,sq);
+// 		}
+
+// 		ans.push_back(v);
+
+// 	}
+// 	return ans;
+// }
+
+vector<int> zigzagtraversal(Node* root) {
+	vector<int> ans;
 	queue<Node*> q;
+	if (!root) return ans;
 	q.push(root);
-	Node *temp;
-	int len;
-	bool flag = false;
+	int f = 1;
 	while (!q.empty()) {
-		len = q.size();// ?
-		vector<int> v;
-		for (int i = 0; i < len; i++) {
-			temp = q.front();
-			q.pop();
-			v.push_back(temp->val);
-			if (flag) {
-				if (temp->left) q.push(temp->left);
-				if (temp->right) q.push(temp->right);
-			} else {
-				if (temp->right) q.push(temp->right);
-				if (temp->left) q.push(temp->left);
-			}
+		vector<int> temp;
+		int len = q.size();
+		while (len--) {
+			Node* t = q.front();
 
 		}
-		ans.push_back(v);
-		flag = !flag;
 	}
-	return ans;
 }
-
-
 
 int main() {
 #ifndef ONLINE_JUDGE
