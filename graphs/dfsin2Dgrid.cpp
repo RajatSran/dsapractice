@@ -19,7 +19,7 @@ bool vis[1001][1001];
 bool isValid(int x, int y) {
 	if (x < 1 || x > N || y < 1 || y > M)
 		return false;
-	if (vis[x][y])
+	if (vis[x][y] || arr[x][y])
 		return false;
 	return true;
 }
