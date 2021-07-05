@@ -63,6 +63,10 @@ void bfs(int srcX , int srcY)
 
 int main()
 {
+#ifndef ONLINE_JUDGE
+	freopen("input.txt", "r", stdin);
+	freopen("output.txt", "w", stdout);
+#endif
 	int srcX , srcY , endX , endY;
 	cin >> N;
 
