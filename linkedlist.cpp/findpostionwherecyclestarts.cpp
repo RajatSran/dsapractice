@@ -26,24 +26,28 @@ void insertattail(node* &head, int val) {
 }
 
 
-void rotate(node* &head, int k) {
-	if (head == NULL || head->next == NULL || k == 0) {
-		return head;
+Node* findcyclenode(Node* head) {
+	if (head == NULL) return head;
+	Node* slow = head;
+	Node* fast = head;
+	bool flag = false;
+	while (fast->next != NULL) {
+		slow = slow->next;
+		fast = fast->nexxt->next;
+		if (slow == fast) {
+			flag = true;
+			break;
+		}
 	}
-	int n = 1;
-	node* temp = head;
-	while (temp->next != NULL) {
-		temp = temp->next;
-		n++;
+	if (!flag) {
+		return NULL;
 	}
-	k = k % n;
-	temp->next = head;
-	for (int i = 0; i < n - k; i++) {
-		temp = temp->next;
+	Node* entry = head;
+	while (entry != slow) {
+		entry = entry->next;
+		slow = slow->next;
 	}
-	head = temp->next;
-	temp->next = NULL;
-	return head;
+	return slow;
 }
 
 int main() {
@@ -60,7 +64,7 @@ int main() {
 	insertathead(head, 6);
 	insertathead(head, 7);
 	display(head);
-	rotate(head, 3);
+	rotate(head);
 	display(head);
 }
 

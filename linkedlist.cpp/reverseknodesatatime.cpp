@@ -33,11 +33,13 @@ void reverseknode(Node* &head, int k) {
 		size = size->next;
 		n++;
 	}
+
 	Node* dummy = new Node(0);
 	dummy->next = head;
 	Node* current = head;
 	Node* nxt = current -> next;
 	Node* pre = dummy;
+
 	for (int i = 0; i < n / k; ++i)
 	{
 		for (int i = 0; i < k; i++) {

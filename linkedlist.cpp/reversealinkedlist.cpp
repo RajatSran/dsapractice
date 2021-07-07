@@ -91,7 +91,6 @@ int main() {
 	display(head);
 	reverse(head);
 	display(head);
-
 }
 
 
