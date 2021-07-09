@@ -25,28 +25,30 @@ void insertattail(node* &head, int val) {
 	temp->next = n;
 }
 
-node *removeDuplicates(node *head)
-{
-	if (head == NULL) return head;
-	map<int, int> track;
-	node* p1 = head;
 
-	while (p1) {
-		track[p1->data]++;
-		p1 = p1->next;
-	}
-	node* result = new node(0);
-	node* out = result;
-	for (auto x : track) {
-		if (x.second >= 1) {
-			result->next = new node(x.first);
-			result = result->next;
+node* findcyclenode(node* head) {
+	if (head == NULL) return head;
+	node* slow = head;
+	node* fast = head;
+	bool flag = false;
+	while (fast->next != NULL) {
+		slow = slow->next;
+		fast = fast->next->next;
+		if (slow == fast) {
+			flag = true;
+			break;
 		}
 	}
-	return out->next;
+	if (!flag) {
+		return NULL;
+	}
+	node* entry = head;
+	while (entry != slow) {
+		entry = entry->next;
+		slow = slow->next;
+	}
+	return slow;
 }
-
-
 
 int main() {
 #ifndef ONLINE_JUDGE
@@ -57,13 +59,13 @@ int main() {
 	insertattail(head, 1);
 	insertattail(head, 2);
 	insertattail(head, 3);
-	insertattail(head, 3);
-	insertattail(head, 3);
+	insertattail(head, 4);
+	insertattail(head, 5);
 	insertattail(head, 6);
 	insertattail(head, 7);
-	display(head);
-	removeDuplicates(head);
-	display(head);
+	// display(head);
+	cout << findcyclenode(head)->data;
+	// display(head);
 }
 
 

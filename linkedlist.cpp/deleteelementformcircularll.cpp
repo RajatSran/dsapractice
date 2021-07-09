@@ -25,25 +25,8 @@ void insertattail(node* &head, int val) {
 	temp->next = n;
 }
 
-node *removeDuplicates(node *head)
-{
-	if (head == NULL) return head;
-	map<int, int> track;
-	node* p1 = head;
+void deleteincircularlinklist(node* head) {
 
-	while (p1) {
-		track[p1->data]++;
-		p1 = p1->next;
-	}
-	node* result = new node(0);
-	node* out = result;
-	for (auto x : track) {
-		if (x.second >= 1) {
-			result->next = new node(x.first);
-			result = result->next;
-		}
-	}
-	return out->next;
 }
 
 
