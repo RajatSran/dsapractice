@@ -1,1 +1,10 @@
-3 3 6 8 8 
+Number Inserted: 3
+Number Inserted: 5
+Minimum Element in the stack is: 3
+Number Inserted: 2
+Number Inserted: 1
+Minimum Element in the stack is: 1
+Top Most Element Removed: 1
+Minimum Element in the stack is: 2
+Top Most Element Removed: 2
+Top Most Element is: 5
