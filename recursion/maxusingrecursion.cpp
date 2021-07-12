@@ -10,10 +10,10 @@ int maxusingrec(vector<int> arr, int idx) {
 	return maxn = max(maxn, arr[idx]);
 }
 int main() {
-// #ifndef ONLINE_JUDGE
-// 	freopen("input.txt", "r", stdin);
-// 	freopen("output.txt", "r", stdout);
-// #endif
+#ifndef ONLINE_JUDGE
+	freopen("input.txt", "r", stdin);
+	freopen("output.txt", "r", stdout);
+#endif
 	vector<int> arr = {1, 2, 5, 3, 6, 9, 3};
 	cout << maxusingrec(arr, 6);
 
