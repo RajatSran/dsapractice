@@ -18,9 +18,7 @@ void permutations(string str, int ptr) {
     }
 }
 
-/*
-more optimised
-*/
+
 
 void permutaitons1(string s, string ans) {
     if (s.size() == 0) {
