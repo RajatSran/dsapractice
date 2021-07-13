@@ -1,10 +1,13 @@
-vvhhh
-vhvhh
-vhhvh
-vhhhv
-hvvhh
-hvhvh
-hvhhv
-hhvvh
-hhvhv
-hhhvv
+abc
+acb
+bac
+bca
+cba
+cab
+---------another upproach--------
+abc
+acb
+bac
+bca
+cab
+cba
