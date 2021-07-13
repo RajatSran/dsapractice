@@ -1,13 +1,11 @@
-abc
-acb
-bac
-bca
-cba
-cab
----------another upproach--------
-abc
-acb
-bac
-bca
-cab
-cba
+---ii
+--i-i
+--ii-
+-i--i
+-i-i-
+-ii--
+i---i
+i--i-
+i-i--
+ii---
+count->10

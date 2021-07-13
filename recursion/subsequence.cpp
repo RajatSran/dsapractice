@@ -27,7 +27,7 @@ int main() {
     freopen("input.txt", "r", stdin);
     freopen("output.txt", "w", stdout);
 #endif
-    string str = "agj";
+    string str = "asdgj";
     vector<string> result = subsequence(str);
     for (auto a : result) {
         cout << a << endl;
