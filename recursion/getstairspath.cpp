@@ -17,6 +17,7 @@ vector<string> stairspath(int n) {
     vector<string> path1 = stairspath(n - 1);
     vector<string> path2 = stairspath(n - 2);
     vector<string> path3 = stairspath(n - 3);
+
     //acting on it
     vector<string> paths;
 
