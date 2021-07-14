@@ -16,6 +16,7 @@ void encoding(string str, string asf) {
             cout << asf + code << endl;
         }
     } else {
+        //taking one character at a time
         char ch = str[0];
         string roq = str.substr(1);
         if (ch == '0') {
@@ -28,10 +29,11 @@ void encoding(string str, string asf) {
             encoding(roq, asf + code);
         }
 
+        //taking two character at a time
         string ch12 = str.substr(0, 2);
         roq = str.substr(2);
-
-        int ch12v = stoi(ch12); // inbuilt function in c++ to convert string to integer
+        // inbuilt function in c++ to convert string to integer
+        int ch12v = stoi(ch12);
         if (ch12v <= 26) {
             char code = 'a' + ch12v - 1;
 
