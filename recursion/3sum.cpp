@@ -14,7 +14,7 @@ vector<vector<int>> threeSum(vector<int>& nums) {
         // 2nd last and last can form the triblet
     {
 
-        if (i == 0 || (i > 0 && nums[i] != nums[i - 1]))
+        if (i == 0 || (i > 0 && nums[i] != nums[i - 1]))//to remove already considered
         {
             int low = i + 1; int high = nums.size() - 1; int sum = 0 - nums[i]; //sum=-a
             //keeping low at first and high at end
@@ -50,10 +50,10 @@ int main() {
     freopen("input.txt", "r", stdin);
     freopen("output.txt", "w", stdout);
 #endif
-    vector<int> nums = {1, 2, 3, 4, 5, 3, 2, -2, -1, -5, -7, -8, 4, 6};
+    vector<int> nums = { -2, -2, -1, -1, -1, 0, 0, 0, 2, 2, 2};
     vector<vector<int>> output = threeSum(nums);
     for (auto x : output) {
-        for (int y : x) {
+        for (auto y : x) {
             cout << y << " ";
         }
         cout << endl;
