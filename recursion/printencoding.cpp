@@ -15,8 +15,10 @@ void encoding(string str, string asf) {
             char code = 'a' + chv - 1; //as 0->"a"
             cout << asf + code << endl;
         }
-    } else {
-        //taking one character at a time
+    }
+
+    else {
+        /*taking one character at a time*/
         char ch = str[0];
         string roq = str.substr(1);
         if (ch == '0') {
@@ -50,5 +52,5 @@ int main() {
     freopen("input.txt", "r", stdin);
     freopen("output.txt", "w", stdout);
 #endif
-    encoding("123", "");
+    encoding("023", "");
 }
