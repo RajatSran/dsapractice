@@ -17,12 +17,7 @@ void knighttour(vector<vector<int>> &chess, int row, int col, int move, int N) {
         return;
     } else if (move == N * N) {
         chess[row][col] = move;
-        for (int i = 0; i < N; ++i) {
-            for (int j = 0; j < N; ++j) {
-                cout << chess[i][j] << " ";
-            }
-            cout << endl;
-        }
+        printchess(chess, N);
         chess[row][col] = 0;
         return;
     }
