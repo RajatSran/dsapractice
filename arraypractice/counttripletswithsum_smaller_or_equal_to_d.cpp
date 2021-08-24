@@ -21,9 +21,6 @@ long triplets(long t, vector<int> d) {
 	return count ;
 }
 
-void fun(int *ptr) {
-	*ptr = 30;
-}
 
 int main()
 {
@@ -32,27 +29,15 @@ int main()
 	freopen("output.txt", "w", stdout);
 #endif
 
-	// static int i = 5;
-	// if (--i) {
-	// 	main();
-	// 	cout << i << " ";
-	// }
-
-	int y = 20;
-	fun(&y);
-	cout << y++ + 10 << endl;
-	return 0;
-	// int n;
-	// cin >> n;
-	// vector<int> arr(n);
-	// for (int i = 0; i < n; ++i)
-	// {
-	// 	cin >> arr[i];
-	// }
-
-	// long num;
-	// cin >> num;
-
-	// cout << triplets(num, arr);
+	int n;
+	cin >> n;
+	vector<int> arr(n);
+	for (int i = 0; i < n; ++i)
+	{
+		cin >> arr[i];
+	}
+	long num;
+	cin >> num;
+	cout << triplets(num, arr);
 
 }
