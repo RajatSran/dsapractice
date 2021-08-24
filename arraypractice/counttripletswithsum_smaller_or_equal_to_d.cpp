@@ -21,6 +21,10 @@ long triplets(long t, vector<int> d) {
 	return count ;
 }
 
+void fun(int *ptr) {
+	*ptr = 30;
+}
+
 int main()
 {
 #ifndef ONLINE_JUDGE
@@ -28,17 +32,27 @@ int main()
 	freopen("output.txt", "w", stdout);
 #endif
 
-	int n;
-	cin >> n;
-	vector<int> arr(n);
-	for (int i = 0; i < n; ++i)
-	{
-		cin >> arr[i];
-	}
+	// static int i = 5;
+	// if (--i) {
+	// 	main();
+	// 	cout << i << " ";
+	// }
 
-	long num;
-	cin >> num;
+	int y = 20;
+	fun(&y);
+	cout << y++ + 10 << endl;
+	return 0;
+	// int n;
+	// cin >> n;
+	// vector<int> arr(n);
+	// for (int i = 0; i < n; ++i)
+	// {
+	// 	cin >> arr[i];
+	// }
 
-	cout << triplets(num, arr);
+	// long num;
+	// cin >> num;
+
+	// cout << triplets(num, arr);
 
 }
