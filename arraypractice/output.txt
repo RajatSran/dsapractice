@@ -1,1 +1,1 @@
- Number of inversions are 5
+4
