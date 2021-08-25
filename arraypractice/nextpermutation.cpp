@@ -2,15 +2,30 @@
 using namespace std;
 
 void nextPermutation(vector<int>& nums) {
-	int i = nums.size() - 2, j = i + 2;
-	while (i >= 0 && nums[i] >= nums[i + 1]) i--;
-	if (i == -1) {
-		reverse(begin(nums), end(nums));
+
+	int n = nums.size();
+	if (n <= 1) {
 		return;
 	}
-	while (nums[--j] <= nums[i]);
-	swap(nums[i], nums[j]);
-	sort(begin(nums) + i + 1, end(nums));
+	int i, j;
+	for (i = n - 2; i >= 0; --i)
+	{
+		if (nums[i] < nums[i + 1]) {
+			break;
+		}
+	}
+	if (i < 0) {
+		reverse(nums.begin(), nums.end());
+	} else {
+		for (j = n - 1; j > i; j--) {
+			if (nums[j] > nums[i]) {
+				break;
+			}
+		}
+		swap(nums[i], nums[j]);
+		reverse(nums.begin() + i + 1, nums.end());
+	}
+
 }
 
 int main()
@@ -28,5 +43,8 @@ int main()
 		cin >> arr[i];
 	}
 	nextPermutation(arr);
+	for (int x : arr) {
+		cout << x;
+	}
 
 }
