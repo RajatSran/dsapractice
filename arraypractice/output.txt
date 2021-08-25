@@ -1,1 +1,1 @@
-13245
+ Number of inversions are 5
